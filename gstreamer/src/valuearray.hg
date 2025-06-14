@@ -27,12 +27,12 @@ _DEFS(gstreamermm,gst)
 namespace Gst
 {
 
-class ValueList : public Glib::ValueBase
+class ValueArray : public Glib::ValueBase
 {
 public:
   /** Default constructor.
    */
-  ValueList();
+  ValueArray();
 
   /** Get the GType for this class, for use with the underlying GObject type system.
    */
@@ -40,32 +40,32 @@ public:
 
 public:
 
-  /** Gets the number of values contained in the list.
+  /** Gets the number of values contained in the array.
    *
    * @return The number of values.
    */
   guint size() const;
   
-  /** Sets @a value to the value is the member of the list
+  /** Sets @a value to the value is the member of the array
    * at the index @a index.
    *
-   * @param index Index of value to get from the list.
+   * @param index Index of value to get from the array.
    * @param value The value at the given index.
-   * @return Whether the list contains a value at given index.
+   * @return Whether the array contains a value at given index.
    */
   bool get(guint index, Glib::ValueBase& value) const;
 
-  /** Appends @a value to the ValueList.
+  /** Appends @a value to the ValueArray.
    *
    * @param value The value to append.
    */
-  Gst::ValueList& append(const Glib::ValueBase& value);
+  Gst::ValueArray& append(const Glib::ValueBase& value);
 
-  /** Prepends @a value to the ValueList.
+  /** Prepends @a value to the ValueArray.
    *
    * @param value The value to prepend.
    */
-  Gst::ValueList& prepend(const Glib::ValueBase& value);
+  Gst::ValueArray& prepend(const Glib::ValueBase& value);
 
 };
 
