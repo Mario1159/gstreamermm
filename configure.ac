@@ -96,7 +96,7 @@ AC_ARG_ENABLE(unittests,
 AS_IF([test "$enable_unittests" != no],[
        AC_CHECK_LIB([gtest_main], [main], [have_gtest=yes],[have_gtest=no])
        AS_IF([test "$enable_unittests" = "yes" && test "$have_gtest" = "no"],
-               AC_MSG_FAILURE([Unit tests are enabled so gtest library is required for building unit tests.])], [enable_unittests=$have_gtest)
+               AC_MSG_FAILURE([Unit tests are enabled so gtest library is required for building unit tests.])], [enable_unittests=$have_gtest])
 ])
 
 AC_SUBST([ENABLE_UNITTESTS], ["$enable_unittests"])
