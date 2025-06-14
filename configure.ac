@@ -176,6 +176,7 @@ theoraparse|theoraparse|TheoraParse \
 timeoverlay|timeoverlay|TimeOverlay \
 uridecodebin|uridecodebin|UriDecodeBin \
 videoconvert|videoconvert|VideoConvert \
+videoconvertscale|videoconvertscale|VideoConvertScale \
 videorate|videorate|VideoRate \
 videoscale|videoscale|VideoScale \
 videotestsrc|videotestsrc|VideoTestSrc \
