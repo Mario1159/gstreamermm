@@ -113,19 +113,19 @@ public:
    * bool on_have_data(const Glib::RefPtr<Gst::Pad>& pad, const
    * Glib::RefPtr<Gst::MiniObjec>& data);.
    */
-  typedef sigc::slot< PadProbeReturn, const Glib::RefPtr<Gst::Pad>&, const Gst::PadProbeInfo& > SlotProbe;
+  typedef sigc::slot< PadProbeReturn(const Glib::RefPtr<Gst::Pad>&, const Gst::PadProbeInfo&) > SlotProbe;
 
-  typedef sigc::slot< Gst::FlowReturn, const Glib::RefPtr<Gst::Pad>&, /*transfer full*/ Glib::RefPtr<Gst::Buffer>& > SlotChain;
+  typedef sigc::slot< Gst::FlowReturn(const Glib::RefPtr<Gst::Pad>&, /*transfer full*/ Glib::RefPtr<Gst::Buffer>&) > SlotChain;
 
-  typedef sigc::slot< gboolean, const Glib::RefPtr<Gst::Pad>&, /*transfer full*/Glib::RefPtr<Gst::Event>& > SlotEvent;
+  typedef sigc::slot< gboolean(const Glib::RefPtr<Gst::Pad>&, /*transfer full*/Glib::RefPtr<Gst::Event>&) > SlotEvent;
 
-  typedef sigc::slot< gboolean, const Glib::RefPtr<Gst::Pad>&, /*transfer none*/ Glib::RefPtr<Gst::Query>& > SlotQuery;
+  typedef sigc::slot< gboolean(const Glib::RefPtr<Gst::Pad>&, /*transfer none*/ Glib::RefPtr<Gst::Query>&) > SlotQuery;
 
-  typedef sigc::slot< bool, const Glib::RefPtr<Gst::Pad>& > SlotActivate;
+  typedef sigc::slot< bool(const Glib::RefPtr<Gst::Pad>&) > SlotActivate;
 
-  typedef sigc::slot< bool, const Glib::RefPtr<Gst::Pad>&, Gst::PadMode, bool > SlotActivatemode;
+  typedef sigc::slot< bool(const Glib::RefPtr<Gst::Pad>&, Gst::PadMode, bool) > SlotActivatemode;
 
-  typedef sigc::slot< Gst::FlowReturn, const Glib::RefPtr<Gst::Pad>&, guint64, guint, Glib::RefPtr<Gst::Buffer>& > SlotGetrange;
+  typedef sigc::slot< Gst::FlowReturn(const Glib::RefPtr<Gst::Pad>&, guint64, guint, Glib::RefPtr<Gst::Buffer>&) > SlotGetrange;
 
   /** Creates a new pad with the given name in the given direction.
    *
